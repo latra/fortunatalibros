@@ -1,0 +1,269 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f5ebe7 0%, #e8d5d1 100%);
+    color: #5a3a3a;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Textura vintage */
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 1px 1px, rgba(200,126,117,.15) 1px, transparent 0);
+    background-size: 20px 20px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.2;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #c87e75;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #c87e75;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Contenido principal */
+.content {
+    max-width: 90vw;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-container {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 
+        0 10px 30px rgba(200,126,117,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(200,126,117,0.2);
+    width: 70vw;
+    max-width: 70vw;
+}
+
+.text-container p {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #5a3a3a;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.text-container p:last-child {
+    margin-bottom: 0;
+}
+
+/* Sección del contador */
+.countdown-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.countdown-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: #c87e75;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.time-unit {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(200,126,117,0.15);
+    min-width: 100px;
+    border: 2px solid #c87e75;
+}
+
+.number {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #c87e75;
+    line-height: 1;
+}
+
+.label {
+    display: block;
+    font-size: 0.9rem;
+    color: #c87e75;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.opening-date {
+    font-size: 1.1rem;
+    color: #c87e75;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    color: #c87e75;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    flex-shrink: 0;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-container,
+.countdown-section {
+    animation: fadeIn 1s ease-out;
+}
+
+.time-unit {
+    transition: transform 0.3s ease;
+}
+
+.time-unit:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 3.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .countdown {
+        gap: 15px;
+    }
+    
+    .time-unit {
+        min-width: 80px;
+        padding: 15px 10px;
+    }
+    
+    .number {
+        font-size: 2rem;
+    }
+    
+    .text-container {
+        padding: 40px 30px;
+    }
+    
+    .text-container p {
+        font-size: 1.2rem;
+    }
+    
+    .container {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 2.2rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .countdown-title {
+        font-size: 2rem;
+    }
+    
+    .countdown {
+        gap: 10px;
+    }
+    
+    .time-unit {
+        min-width: 70px;
+        padding: 12px 8px;
+    }
+    
+    .number {
+        font-size: 1.8rem;
+    }
+    
+    .text-container p {
+        font-size: 1.1rem;
+    }
+    
+    .text-container {
+        padding: 35px 25px;
+    }
+} 
